@@ -25,7 +25,5 @@ def user_sms_reply():
         resp1 = reply.message("Deposits after 1998\n"+str4+"\n Total Sum = "+str(Total))
     return str(reply)
 
-
-# 12 06 1998 03 07 2000
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
