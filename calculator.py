@@ -118,6 +118,7 @@ def till_mar1998(start_date, end_date):
         elif start_date[2] == end_date[2] and end_date[2] > 2010:
             months = 9 + end_date[1]
             interest = int(round(OB * months * 8 / 1200))
+            prevmonth = end_date[1]
             OB += interest
             Total = interest
             start_date[2] += 1
