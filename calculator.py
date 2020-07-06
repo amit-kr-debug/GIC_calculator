@@ -18,7 +18,7 @@ def till_mar1998(start_date, end_date):
     tillmar1998 = ""
     if start_date[2] > 1998:
         return OB
-    while start_date[2] <= end_date[2]:
+    while start_date[2] < end_date[2]:
         prevmonth = start_date[1]
         prevyear = start_date[2]
         if start_date[2] < 1982:
@@ -115,7 +115,7 @@ def till_mar1998(start_date, end_date):
                 OB += interest
                 Total = interest
                 start_date[2] += 1
-        elif start_date[2] == end_date[2] and end_date[2] > 2010:
+        elif start_date[2]+1 == end_date[2] and end_date[2] > 2010:
             months = 9 + end_date[1]
             interest = int(round(OB * months * 8 / 1200))
             prevmonth = end_date[1]
@@ -209,7 +209,7 @@ def calculator(start_date_str: str, end_date_str: str):
     starting_date = [int(start_date_str[0:2]), int(start_date_str[3:5]), int(start_date_str[6:])]
     ending_date = [int(end_date_str[0:2]), int(end_date_str[3:5]), int(end_date_str[6:])]
     TotalSum, str1, str2 = calculate_gic(starting_date, ending_date)
-    # print(str1, str2)
+    print(str1, str2)
     return TotalSum, str1, str2
 
-# calculator("23 01 1989","29 02 2020")
+calculator("23 01 1989","29 02 2020")
