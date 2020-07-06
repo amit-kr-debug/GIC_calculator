@@ -182,7 +182,7 @@ def till_end(start_date, end_date):
             OB += Total
             start_date[2] += 1
 
-        elif start_date[2] == end_date[2]:
+        elif start_date[2] == end_date[2] and end_date[2] > 2010:
             months = end_date[1] - start_date[1] +1
             interest = int(round((OB * months + months / 2 * (2 * 21 + (months - 1) * 21)) * 8 / 1200))
             start_date[1] = 1
@@ -191,13 +191,13 @@ def till_end(start_date, end_date):
             start_date[2] += 1
 
         else:
-            months = 13 - start_date[1] + 1
+            months = 13 - start_date[1]
             interest = int(round((OB * months + months / 2 * (2 * 21 + (months - 1) * 21)) * 8 / 1200))
             start_date[1] = 1
             Total = 21 * months + interest
             OB += Total
             start_date[2] += 1
-        # print(start_date[1], "-", start_date[2], ": ", OB, interest, Total)
+            # print(prevmonth, "-", prevyear, ": ", OB, interest, Total)
         # aftermar1998 += str(start_date[1]) + "-" + str(start_date[2]) + ": "+str(OB)+"   "+str(interest)+"   "+str(Total)+"\n"
         aftermar1998 += str(prevmonth) + "-" + str(prevyear) + ": " + str(OB) + "    " + str(
             interest) + "    " + str(Total) + "\n"
@@ -210,3 +210,5 @@ def calculator(start_date_str: str, end_date_str: str):
     TotalSum, str1, str2 = calculate_gic(starting_date, ending_date)
     # print(str1, str2)
     return TotalSum, str1, str2
+
+# calculator("23 01 1989","29 02 2020")
