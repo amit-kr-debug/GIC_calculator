@@ -115,6 +115,12 @@ def till_mar1998(start_date, end_date):
                 OB += interest
                 Total = interest
                 start_date[2] += 1
+        elif start_date[2] == end_date[2] and end_date[2] > 2003:
+            months = end_date[1] - start_date[1] + 1
+            interest = int(round(OB * months * 8 / 1200))
+            OB += interest
+            Total = interest
+            start_date[2] += 1
         else:
             if start_date[1] <= 3:
                 months = 3 - start_date[1] + 1
@@ -185,7 +191,7 @@ def till_end(start_date, end_date):
             start_date[2] += 1
 
         else:
-            months = 13 - start_date[1]
+            months = 13 - start_date[1] + 1
             interest = int(round((OB * months + months / 2 * (2 * 21 + (months - 1) * 21)) * 8 / 1200))
             start_date[1] = 1
             Total = 21 * months + interest
