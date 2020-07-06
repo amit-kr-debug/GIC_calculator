@@ -21,8 +21,8 @@ def user_sms_reply():
         # resp1.message("testing")
     else:
         Total, str3, str4 = calculator.calculator(msg[0:11], msg[11:])
-        resp = reply.message("Deposits till 1998\n"+str3)
-        resp1 = reply.message("Deposits after 1998\n"+str4+"\n Total Sum = "+str(Total))
+        resp = reply.message("Deposits till 1998\n\n"+str3)
+        resp1 = reply.message("Deposits after 1998\n\n"+str4+"\n Total Sum = "+str(Total))
     return str(reply)
 
 if __name__ == "__main__":
