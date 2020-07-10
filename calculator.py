@@ -123,7 +123,6 @@ def till_mar1998(start_date, end_date):
                 months = 9 + end_date[1]
                 flag = 0
             interest = int(round(OB * months * 8 / 1200))
-            prevmonth = end_date[1]
             OB += interest
             Total = interest
             start_date[2] += 1
@@ -132,7 +131,6 @@ def till_mar1998(start_date, end_date):
             if flag == 1:
                 months = end_date[1] - 3
                 interest = int(round(OB * months * 8 / 1200))
-                prevmonth = end_date[1]
                 OB += interest
                 Total = interest
                 start_date[2] += 1
