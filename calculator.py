@@ -224,7 +224,7 @@ def calculator(start_date_str: str, end_date_str: str):
     starting_date = [int(start_date_str[0:2]), int(start_date_str[3:5]), int(start_date_str[6:])]
     ending_date = [int(end_date_str[0:2]), int(end_date_str[3:5]), int(end_date_str[6:])]
     TotalSum, str1, str2 = calculate_gic(starting_date, ending_date)
-    print(str1, str2)
+    # print(str1, str2)
     return TotalSum, str1, str2
 
 # calculator("21 12 1984","31 05 2020")
