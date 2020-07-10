@@ -227,4 +227,4 @@ def calculator(start_date_str: str, end_date_str: str):
     print(str1, str2)
     return TotalSum, str1, str2
 
-calculator("23 01 1989","29 02 2020")
+# calculator("21 12 1984","31 05 2020")
