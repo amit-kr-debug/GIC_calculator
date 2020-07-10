@@ -131,6 +131,7 @@ def till_mar1998(start_date, end_date):
             if flag == 1:
                 months = end_date[1] - 3
                 interest = int(round(OB * months * 8 / 1200))
+                prevyear += 1
                 OB += interest
                 Total = interest
                 start_date[2] += 1
@@ -220,9 +221,10 @@ def till_end(start_date, end_date):
     return OB, aftermar1998
 
 
-def calculators(start_date_str: str, end_date_str: str):
-    starting_date = [int(start_date_str[0:2]), int(start_date_str[3:5]), int(start_date_str[6:])]
-    ending_date = [int(end_date_str[0:2]), int(end_date_str[3:5]), int(end_date_str[6:])]
+def calculators(start_date_list: list, end_date_list: list):
+    starting_date = [int(start_date_list[0]), int(start_date_list[1]), int(start_date_list[2])]
+    ending_date = [int(end_date_list[0]), int(end_date_list[1]), int(end_date_list[2])]
+    # print(start_date_list, end_date_list, starting_date, ending_date)
     TotalSum, str1, str2 = calculate_gic(starting_date, ending_date)
     # print(str1, str2)
     return TotalSum, str1, str2

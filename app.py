@@ -20,7 +20,9 @@ def user_sms_reply():
             "Enter Start and End Dates: ")
         # resp1.message("testing")
     else:
-        Total, str3, str4 = calculator.calculators(msg[0:11], msg[11:])
+        l = msg.split()
+        # print(l)
+        Total, str3, str4 = calculator.calculators(l[0:3], l[3:])
         resp = reply.message("Deposits till 1998\n\n"+str3)
         resp1 = reply.message("Deposits after 1998\n\n"+str4+"\n Total Sum = "+str(Total))
     return str(reply)
