@@ -17,7 +17,7 @@ def till_mar1998(start_date, end_date):
     OB = 0
     tillmar1998 = ""
     if start_date[2] > 1998:
-        return OB
+        return OB, "Start date is after 1998, So no special calculations needed.\n"
     while start_date[2] < end_date[2]:
         prevmonth = start_date[1]
         prevyear = start_date[2]
